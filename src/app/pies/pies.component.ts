@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pie } from '../pie';
+import { PIES } from '../mock-pies';
 
 @Component({
   selector: 'app-pies',
@@ -17,4 +18,6 @@ export class PiesComponent implements OnInit {
     id: 1,
     name: 'Strawberry'
   }
+
+  pies = PIES;
 }
