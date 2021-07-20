@@ -1,3 +1,6 @@
 <h2>{{ pie.name | uppercase }} Details</h2>
-<div><span>id: </span>{{ pie.id }}</div>
-<div><span>name: </span>{{ pie.name }}</div>
+
+<div>
+    <label for="name">Pie name: </label>
+    <input id="name" [(ngModel)]="pie.name" placeholder="name">
+</div>
