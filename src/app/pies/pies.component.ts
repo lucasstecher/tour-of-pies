@@ -14,10 +14,10 @@ export class PiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  pie : Pie = {
-    id: 1,
-    name: 'Strawberry'
-  }
-
   pies = PIES;
+
+  selectedPie?: Pie;
+  onSelect(pie: Pie): void {
+    this.selectedPie = pie;
+  }
 }
