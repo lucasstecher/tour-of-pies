@@ -1,6 +1,9 @@
-import { PieService } from './../pie.service';
 import { Component, OnInit } from '@angular/core';
+
 import { Pie } from '../pie';
+import { PieService } from './../pie.service';
+import { MessageService } from '../message.service';
+
 
 @Component({
   selector: 'app-pies',
@@ -8,21 +11,16 @@ import { Pie } from '../pie';
   styleUrls: ['./pies.component.css']
 })
 export class PiesComponent implements OnInit {
+    pies : Pie[] = [];
 
-  constructor(private pieService: PieService ) { }
-
-  getPies(): void {
-    this.pies = this.pieService.getPies();
-  }
+  constructor(private pieService: PieService) { }
 
   ngOnInit(): void {
     this.getPies();
   }
 
-  pies : Pie[] = [];
-
-  selectedPie?: Pie;
-  onSelect(pie: Pie): void {
-    this.selectedPie = pie;
+  getPies(): void {
+    this.pieService.getPies()
+      .subscribe(pies => this.pies = pies);
   }
 }

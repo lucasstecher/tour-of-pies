@@ -1,9 +1,10 @@
 <h2>My Pies</h2>
 
 <ul class="pies">
-    <li *ngFor="let pie of pies" [class.selected]="pie === selectedPie" (click)="onSelect(pie)">
-        <span class="badge">{{ pie.id }}</span> {{ pie.name }}
+
+    <li *ngFor="let pie of pies">
+        <a routerLink="/detail/{{ pie.id }}">
+            <span class="badge">{{ pie.id }}</span> {{ pie.name }}
+        </a>
     </li>
 </ul>
-
-<app-pie-detail [pie]="selectedPie"></app-pie-detail>

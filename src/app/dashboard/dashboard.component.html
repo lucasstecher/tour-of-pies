@@ -1,0 +1,8 @@
+<h2>Top Pies</h2>
+<div class="pies-menu">
+
+    <a *ngFor="let pie of pies"
+        routerLink="/detail/{{pie.id}}">
+        {{ pie.name }}
+    </a>
+</div>

@@ -1,2 +1,8 @@
-<h1>{{ title }} </h1>
-<app-pies></app-pies>
+<h1> {{ title }} </h1>
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    
+    <a routerLink="/pies">Pies</a>
+</nav>
+<router-outlet></router-outlet>
+<app-messages></app-messages>
