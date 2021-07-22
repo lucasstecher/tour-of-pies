@@ -1,6 +1,6 @@
+import { PieService } from './../pie.service';
 import { Component, OnInit } from '@angular/core';
 import { Pie } from '../pie';
-import { PIES } from '../mock-pies';
 
 @Component({
   selector: 'app-pies',
@@ -9,12 +9,17 @@ import { PIES } from '../mock-pies';
 })
 export class PiesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pieService: PieService ) { }
 
-  ngOnInit(): void {
+  getPies(): void {
+    this.pies = this.pieService.getPies();
   }
 
-  pies = PIES;
+  ngOnInit(): void {
+    this.getPies();
+  }
+
+  pies : Pie[] = [];
 
   selectedPie?: Pie;
   onSelect(pie: Pie): void {

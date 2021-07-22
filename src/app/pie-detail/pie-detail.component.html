@@ -1,1 +1,10 @@
-<p>pie-detail works!</p>
+<div *ngIf="pie">
+
+    <h2>{{ pie.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{ pie.id }}</div>
+    <div>
+        <label for="pie-name">Pie name: </label>
+        <input id="pie-name" [(ngModel)]="pie.name" placeholder="name">
+    </div>
+
+</div>

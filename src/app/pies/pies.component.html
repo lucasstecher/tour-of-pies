@@ -1,16 +1,9 @@
 <h2>My Pies</h2>
+
 <ul class="pies">
     <li *ngFor="let pie of pies" [class.selected]="pie === selectedPie" (click)="onSelect(pie)">
         <span class="badge">{{ pie.id }}</span> {{ pie.name }}
     </li>
 </ul>
-<div *ngIf="selectedPie">
 
-    <h2>{{ selectedPie.name | uppercase }} Details</h2>
-    <div><span>id: </span>{{ selectedPie.id }}</div>
-    <div>
-        <label for="pie-name">Pie name: </label>
-        <input id="pie-name" [(ngModel)]="selectedPie.name" placeholder="name">
-    </div>
-
-</div>
+<app-pie-detail [pie]="selectedPie"></app-pie-detail>
