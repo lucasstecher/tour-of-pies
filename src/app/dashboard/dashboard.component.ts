@@ -8,7 +8,6 @@ import { PieService } from '../pie.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
   pies: Pie[] = [];
 
   constructor(private pieService: PieService) { }

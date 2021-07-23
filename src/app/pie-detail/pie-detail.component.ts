@@ -25,7 +25,7 @@ ngOnInit(): void {
 
 getPie(): void {
   const id = Number(this.route.snapshot.paramMap.get('id'));
-  this.pieService.getPies(id)
+  this.pieService.getPie(id)
     .subscribe(pie => this.pie = pie);
 }
 

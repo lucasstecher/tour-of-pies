@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Pie } from '../pie';
 import { PieService } from './../pie.service';
-import { MessageService } from '../message.service';
 
 
 @Component({
