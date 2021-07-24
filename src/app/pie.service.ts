@@ -14,14 +14,14 @@ export class PieService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
+  private piesUrl = 'api/heroes';
+
   private log(message: string) {
     this.messageService.add(`PieService: ${message}`)
   }
 
   getPies(): Observable<Pie[]> {
-    const pies = of(PIES);
-    this.messageService.add('PieService: fetched pies');
-    return pies;
+    return this.http.get<Pie[]>(this.piesUrl);
   }
 
   getPie(id: number): Observable<Pie> {
